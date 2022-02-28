@@ -17,6 +17,21 @@ module.exports = {
                     "css-loader",
                     "sass-loader",
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
+            },
+            {
+                test: /\.(svg|png|jpe?g|gif)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        emModule: false,
+                        name: "[name].[hash].[ext]",
+                        outputPath: "imgs"
+                    }
+                }
             }
         ]
     }
